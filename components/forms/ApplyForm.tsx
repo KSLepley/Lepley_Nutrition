@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
@@ -35,14 +36,23 @@ const initialFormData: FormData = {
 
 export function ApplyForm({ selectedPlan }: ApplyFormProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsError, setTermsError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!termsAccepted) {
+      setTermsError("You must agree to the Terms & Conditions before submitting.");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError(null);
+    setTermsError(null);
 
     const payload = {
       ...formData,
@@ -66,6 +76,7 @@ export function ApplyForm({ selectedPlan }: ApplyFormProps) {
       console.log("Apply form submission:", payload);
       setIsSubmitted(true);
       setFormData(initialFormData);
+      setTermsAccepted(false);
     } catch (error) {
       console.error(error);
       setSubmitError("Something went wrong while submitting. Please try again.");
@@ -228,6 +239,28 @@ export function ApplyForm({ selectedPlan }: ApplyFormProps) {
               </label>
             </div>
           </fieldset>
+        </div>
+
+        <div>
+          <label className="inline-flex items-start gap-3 text-sm leading-relaxed text-ink">
+            <input
+              type="checkbox"
+              checked={termsAccepted}
+              onChange={(event) => {
+                setTermsAccepted(event.target.checked);
+                if (event.target.checked) setTermsError(null);
+              }}
+              className="mt-1 h-4 w-4 border-beige text-ink focus:ring-sage"
+            />
+            <span>
+              I agree to the{" "}
+              <Link href="/terms" className="font-semibold underline underline-offset-4">
+                Terms &amp; Conditions
+              </Link>{" "}
+              and understand this service does not provide medical advice.
+            </span>
+          </label>
+          {termsError ? <p className="mt-2 text-xs text-red-700">{termsError}</p> : null}
         </div>
 
         <Button type="submit" className="w-full md:w-auto" disabled={isSubmitting}>
