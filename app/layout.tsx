@@ -28,7 +28,22 @@ export const metadata: Metadata = {
     "Sustainable fat loss",
     "Muscle-building nutrition"
   ],
-  metadataBase: new URL("https://example.com")
+  metadataBase: new URL("https://lepleynutrition.com"),
+  openGraph: {
+    title: "Lepley Nutrition",
+    description: "Structured. Sustainable. Personalized.",
+    url: "https://lepleynutrition.com",
+    siteName: "Lepley Nutrition",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lepley Nutrition - Personalized Macro Coaching"
+      }
+    ],
+    type: "website"
+  }
 };
 
 export default function RootLayout({
