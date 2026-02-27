@@ -40,9 +40,17 @@ const founderHighlights = [
 ];
 
 const galleryImages = [
-  { src: "/images/physique-1.jpg", alt: "Body recomposition progress with a strong, athletic physique" },
+  { src: "/images/physique-1.jpg", alt: "Body recomposition progress with a strong, athletic physique", position: "center 30%" },
   { src: "/images/physique-2.jpg", alt: "Lean muscle-focused progress from personalized macro coaching" },
   { src: "/images/lifestyle-1.jpg", alt: "Active lifestyle and sustainable nutrition habits in daily routine" }
+];
+
+const mealGalleryImages = [
+  { src: "/images/Image%20(2).jpeg", alt: "High-protein whole-food meal prepared for nutrition coaching clients" },
+  { src: "/images/Image%20(3).jpeg", alt: "Balanced meal example with protein, carbs, and healthy fats" },
+  { src: "/images/Image%20(5).jpeg", alt: "Prepared whole-food meal option from structured nutrition planning" },
+  { src: "/images/Image%20(6).jpeg", alt: "Macro-friendly meal built for performance and recovery" },
+  { src: "/images/Image%20(7).jpeg", alt: "Flexible high-protein meal idea with balanced macros" }
 ];
 
 export default function HomePage() {
@@ -70,7 +78,7 @@ export default function HomePage() {
         <div className="rounded-2xl border border-beige bg-white/40 p-8 md:p-10">
           <h2 className="max-w-3xl font-[family-name:var(--font-serif)] text-3xl leading-tight md:text-4xl">Built From Experience</h2>
           <p className="mt-5 max-w-4xl leading-relaxed text-muted">
-            Hi! My name is Kaylie Lepley and I a a STEM college graduate, former college athlete, and lifelong multi-sport competitor with a deep focus on
+            Hi! My name is Kaylie Lepley and I a STEM college graduate, former college athlete, and lifelong multi-sport competitor with a deep focus on
             performance, health, and sustainable results.
           </p>
           <p className="mt-4 max-w-4xl leading-relaxed text-muted">
@@ -135,7 +143,7 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <p className="mt-3 text-xs text-muted">Image placeholder: /public/images/kaylie-profile.jpg</p>
+            <p className="mt-3 text-xs text-muted"> UCSC Class of 25' </p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">About the Founder</p>
@@ -168,6 +176,29 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
+                  style={{ objectPosition: image.position ?? "center" }}
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section className="pt-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Meal Gallery</p>
+          <div className="mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2">
+            {mealGalleryImages.map((image) => (
+              <figure
+                key={image.src}
+                className="relative aspect-square w-[56vw] shrink-0 snap-start overflow-hidden rounded-xl bg-beige/40 sm:w-[32vw] lg:w-[21vw]"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </figure>
             ))}
