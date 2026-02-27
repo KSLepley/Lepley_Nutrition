@@ -36,13 +36,19 @@ export const metadata: Metadata = {
     siteName: "Lepley Nutrition",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "https://lepleynutrition.com/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Lepley Nutrition - Personalized Macro Coaching"
       }
     ],
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lepley Nutrition",
+    description: "Structured. Sustainable. Personalized.",
+    images: ["https://lepleynutrition.com/images/og-image.png"]
   }
 };
 
