@@ -143,7 +143,7 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <p className="mt-3 text-xs text-muted"> UCSC Class of 25' </p>
+            <p className="mt-3 text-xs text-muted"> UCSC Class of 2025 </p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">About the Founder</p>
