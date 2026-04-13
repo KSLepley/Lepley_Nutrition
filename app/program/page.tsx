@@ -102,6 +102,11 @@ const faqs = [
       "Results vary by individual, but adherence to the structure with consistent tracking typically leads to noticeable progress within a few weeks."
   },
   {
+    question: "Are you a certified nutritionist or dietitian?",
+    answer:
+      "No, and I want to be upfront about that. I'm not an RD and this isn't medical advice. What I do bring: a CS & AI degree (I think about nutrition like a system, not vibes), a lifetime of competitive sports, personal experience rebuilding my body from both ends of the spectrum, and 5+ years of actually helping real people get their nutrition right. I always recommend consulting your doctor before starting any new program."
+  },
+  {
     question: "What if I don't live near you?",
     answer:
       "This is a fully remote service - plans and support work anywhere in the world."
@@ -190,9 +195,29 @@ export default function ProgramPage() {
       </Section>
 
       <Section className="pt-8">
-        <div className="rounded-2xl border border-beige bg-white/40 p-6 md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Testimonials</p>
-          <h3 className="mt-3 font-[family-name:var(--font-serif)] text-2xl">Client outcomes and transformation stories coming soon.</h3>
+        <div className="rounded-2xl border border-sage/50 bg-sage/10 p-6 md:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Track Record</p>
+          <h3 className="mt-3 font-[family-name:var(--font-serif)] text-2xl md:text-3xl">5+ years of helping real people.</h3>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted md:text-base">
+            I&rsquo;ve been helping people figure out their nutrition since 2020. It started with friends and training partners who kept asking me what I was doing, and it grew from there. Generic plans weren&rsquo;t working for them. So I started building custom ones. That experience across different body types, schedules, and goals is what goes into every plan today.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-sage/40 bg-ivory px-5 py-4">
+              <p className="font-[family-name:var(--font-serif)] text-2xl text-ink">2020</p>
+              <p className="mt-1 text-sm text-muted">Started helping others with nutrition</p>
+            </div>
+            <div className="rounded-xl border border-sage/40 bg-ivory px-5 py-4">
+              <p className="font-[family-name:var(--font-serif)] text-2xl text-ink">Both Extremes</p>
+              <p className="mt-1 text-sm text-muted">Gained 50+ lbs and got underweight. Rebuilt from both. Not theory.</p>
+            </div>
+            <div className="rounded-xl border border-sage/40 bg-ivory px-5 py-4">
+              <p className="font-[family-name:var(--font-serif)] text-2xl text-ink">CS &amp; AI</p>
+              <p className="mt-1 text-sm text-muted">I think about nutrition like an engineer. Data over guesswork.</p>
+            </div>
+          </div>
+          <p className="mt-6 text-sm leading-relaxed text-muted">
+            Client stories and transformations will be shared here as they come in. For now, apply and experience the process yourself.
+          </p>
         </div>
       </Section>
 

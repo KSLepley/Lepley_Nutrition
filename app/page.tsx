@@ -33,10 +33,10 @@ const philosophyItems = [
 ];
 
 const founderHighlights = [
-  "STEM graduate",
-  "Former college athlete",
-  "50lb transformation rebuild",
-  "Performance-based nutrition approach"
+  "CS & AI degree. I approach nutrition the same way I approach code: find the problem, build a system, test it, and improve it.",
+  "Athlete since I was a kid. I grew up competing and I still train every day.",
+  "Been on both sides. Gained 50+ lbs, lost too much weight, and rebuilt from each. Not theory. Real life.",
+  "Helping people with their nutrition since 2020. Friends, gym partners, and now clients."
 ];
 
 const galleryImages = [
@@ -60,7 +60,7 @@ export default function HomePage() {
         <div className="rounded-2xl bg-beige/60 p-8 md:p-12">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-muted">Personalized Nutrition Coaching</p>
           <h1 className="max-w-4xl font-[family-name:var(--font-serif)] text-4xl leading-tight md:text-6xl">
-            Custom Meal Plans Built Around Your Body &mdash; Not Trends.
+            Custom Meal Plans Built Around Your Body. Not Trends.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">
             High-protein. Low-bloat. Sustainable. Built for real life.
@@ -76,32 +76,26 @@ export default function HomePage() {
 
       <Section>
         <div className="rounded-2xl border border-beige bg-white/40 p-8 md:p-10">
-          <h2 className="max-w-3xl font-[family-name:var(--font-serif)] text-3xl leading-tight md:text-4xl">Built From Experience</h2>
+          <h2 className="max-w-3xl font-[family-name:var(--font-serif)] text-3xl leading-tight md:text-4xl">Built From Experience. Not a Textbook.</h2>
           <p className="mt-5 max-w-4xl leading-relaxed text-muted">
-            Hi! My name is Kaylie Lepley and I a STEM college graduate, former college athlete, and lifelong multi-sport competitor with a deep focus on
-            performance, health, and sustainable results.
+            Hey, I&rsquo;m Kaylie. I have a degree in Computer Science and AI, I&rsquo;ve been in sports my whole life, and I&rsquo;ve been helping people with their nutrition since 2020.
           </p>
           <p className="mt-4 max-w-4xl leading-relaxed text-muted">
-            My background blends analytical and algorithmic thinking with real-world physical performance.
+            I didn&rsquo;t learn this from a weekend course. I learned it by going through it myself, doing the research, and then helping the people around me do the same thing. My CS background means I think about nutrition like a system: look at what&rsquo;s actually going on, figure out what&rsquo;s not working, build something that fits your real life, and adjust as you go.
           </p>
-          <p className="mt-4 max-w-4xl leading-relaxed text-muted">I have personally experienced both extremes of transformation:</p>
+          <p className="mt-4 max-w-4xl leading-relaxed text-muted">I&rsquo;ve been on both sides of it:</p>
           <ul className="mt-5 space-y-4">
             <li className="flex items-start gap-3 text-[15px] leading-relaxed">
               <span className="mt-2 h-2 w-2 rounded-full bg-sage" />
-              <span>Gaining over 50 pounds during COVID and rebuilding my body through disciplined nutrition.</span>
+              <span>I gained over 50 pounds during COVID. I didn&rsquo;t crash diet my way out of it. I built a structured plan, stuck with it, and rebuilt my body the right way.</span>
             </li>
             <li className="flex items-start gap-3 text-[15px] leading-relaxed">
               <span className="mt-2 h-2 w-2 rounded-full bg-sage" />
-              <span>Becoming underweight during college due to stress, to the point where I battled with Hypothalamic amenorrhea, but learned how to properly fuel and restore my health.</span>
+              <span>In college I went the other direction. Stress took over, I got dangerously underweight, and I lost my period (Hypothalamic amenorrhea). I had to learn how to properly fuel my body and get my health back on track.</span>
             </li>
           </ul>
           <p className="mt-5 max-w-4xl leading-relaxed text-muted">
-            Through research, structure, and experimentation, I developed a sustainable, performance-based nutrition system
-            focused on body recomposition, energy optimization, and longevity.
-          </p>
-          <p className="mt-4 max-w-4xl leading-relaxed text-muted">
-            Today I live an active lifestyle centered around lifting, outdoor movement, and pushing physical limits while
-            maintaining flexibility and balance with mostly whole foods and structured macro planning.
+            Most people giving nutrition advice have only been on one side. I&rsquo;ve been on both, and I figured my way out each time. That&rsquo;s what I bring to every plan I build.
           </p>
           <div className="mt-8 border-t border-beige pt-6">
             <Button href="/apply">Start Your Custom Plan</Button>
@@ -113,7 +107,7 @@ export default function HomePage() {
         <div className="rounded-2xl border border-ink/15 bg-ink px-8 py-12 text-ivory md:px-12">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-ivory/70">The Philosophy</p>
           <h2 className="mt-3 max-w-3xl font-[family-name:var(--font-serif)] text-3xl leading-tight md:text-5xl">
-            Nutrition should build your body &mdash; not punish it.
+            Nutrition should build your body. Not punish it.
           </h2>
           <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ivory/80 md:text-base">
             Extreme deficits, elimination diets, and rigid templates fail long-term. Real transformation comes from
@@ -143,14 +137,13 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <p className="mt-3 text-xs text-muted"> UCSC Class of 2025 </p>
+            <p className="mt-3 text-xs text-muted">UCSC &rsquo;25, Computer Science &amp; AI</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">About the Founder</p>
-            <h2 className="mt-3 font-[family-name:var(--font-serif)] text-3xl">Built on science, tested in real life.</h2>
+            <h2 className="mt-3 font-[family-name:var(--font-serif)] text-3xl">I think like an engineer. I train like an athlete. I coach from experience.</h2>
             <p className="mt-4 max-w-xl leading-relaxed text-muted">
-              I coach from both data and lived experience, translating complex nutrition strategy into practical structure
-              for busy, performance-focused lives.
+              I don&rsquo;t coach from a script. I look at your data, your habits, and your goals, then I build something that actually makes sense for how you live. My CS background is how I think through problems. My years in sports are how I understand what your body needs.
             </p>
             <ul className="mt-5 space-y-3">
               {founderHighlights.map((item) => (

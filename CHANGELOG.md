@@ -56,7 +56,37 @@
 
 ---
 
-### 5. Mobile Navigation (Hamburger Menu)
+### 5. Social Proof & Positioning Overhaul
+**Files:** `app/page.tsx`, `app/program/page.tsx`
+
+**Goal:** Reframe Kaylie's credibility around her unique combination (CS/AI degree + lifelong athlete + both extremes of transformation + 5 years coaching) instead of traditional certifications.
+
+**Homepage — "Built From Experience" section:**
+- Headline changed to "Built From Experience — Not a Textbook"
+- Rewrote intro to lead with CS & AI degree + coaching since 2020
+- Reframed the approach as "engineering mindset" — analyze inputs, find what's broken, build a system, iterate on data
+- Strengthened transformation bullet points with more direct language
+- Added closing line: "Most people giving nutrition advice have only been on one side. I've been on both."
+
+**Homepage — "About the Founder" card:**
+- Headline changed to "An engineer's brain. An athlete's body. Real-world results."
+- Description rewritten to emphasize analytical approach + athletic understanding
+- Founder highlights rewritten from vague ("STEM graduate") to specific ("CS & AI degree — I treat nutrition like a systems problem, not guesswork")
+- Photo caption updated to "UCSC '25 — Computer Science & AI"
+
+**Program page — Testimonials section replaced:**
+- Replaced empty "coming soon" placeholder with a "Track Record" section
+- Added three stat cards: "2020" (coaching start), "Both Extremes" (transformation story), "CS & AI" (degree)
+- Includes honest note that client stories will be added as they come in
+
+**Program page — New FAQ added:**
+- "Are you a certified nutritionist or dietitian?" — addresses it head-on with transparency
+- Explains what she brings instead: CS/AI degree, lifetime athletics, personal transformation, 5+ years coaching
+- Includes medical consultation reminder for trust and legal coverage
+
+---
+
+### 6. Mobile Navigation (Hamburger Menu)
 **File:** `components/layout/SiteHeader.tsx`
 
 **Problem:** The header nav rendered four horizontal links with no responsive behavior. On mobile screens, the links would overflow or stack awkwardly — a conversion blocker for social media traffic.
