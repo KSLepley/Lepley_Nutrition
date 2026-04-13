@@ -1,17 +1,21 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getWelcomeEmailTemplate } from "@/lib/emails/welcome";
 
 export const runtime = "nodejs";
 
 type ApplySubmission = {
   name: string;
   email: string;
+  phone: string;
   age: string;
+  gender: string;
   height: string;
   weight: string;
   activityLevel: string;
   goal: string;
   nutritionStruggle: string;
+  trackingMacros: string;
   selectedPlan: string;
 };
 
@@ -28,12 +32,15 @@ function isValidSubmission(payload: Partial<ApplySubmission>): payload is ApplyS
   return Boolean(
     payload.name &&
       payload.email &&
+      payload.phone &&
       payload.age &&
+      payload.gender &&
       payload.height &&
       payload.weight &&
       payload.activityLevel &&
       payload.goal &&
       payload.nutritionStruggle &&
+      payload.trackingMacros &&
       payload.selectedPlan
   );
 }
@@ -51,30 +58,47 @@ export async function POST(request: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
+  // Switch to "Lepley Nutrition <hello@lepleynutrition.com>" once domain is verified in Resend
+  const fromAddress = process.env.EMAIL_FROM ?? "Lepley Nutrition <onboarding@resend.dev>";
+
   const html = `
     <h2>New Nutrition Plan Application</h2>
     <p><strong>Name:</strong> ${escapeHtml(body.name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(body.email)}</p>
+    <p><strong>Phone:</strong> ${escapeHtml(body.phone)}</p>
     <p><strong>Age:</strong> ${escapeHtml(body.age)}</p>
+    <p><strong>Gender:</strong> ${escapeHtml(body.gender)}</p>
     <p><strong>Height:</strong> ${escapeHtml(body.height)}</p>
     <p><strong>Weight:</strong> ${escapeHtml(body.weight)}</p>
     <p><strong>Activity level:</strong> ${escapeHtml(body.activityLevel)}</p>
     <p><strong>Goal:</strong> ${escapeHtml(body.goal)}</p>
     <p><strong>Biggest struggle:</strong> ${escapeHtml(body.nutritionStruggle)}</p>
+    <p><strong>Currently tracking macros:</strong> ${escapeHtml(body.trackingMacros)}</p>
     <p><strong>Selected plan:</strong> ${escapeHtml(body.selectedPlan)}</p>
   `;
 
   try {
-    const { error } = await resend.emails.send({
-      from: "Lepley Nutrition <onboarding@resend.dev>",
+    // Send notification email to you
+    const { error: notifyError } = await resend.emails.send({
+      from: fromAddress,
       to: "kayoticknowledge@gmail.com",
       subject: "New Nutrition Plan Application",
       html
     });
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (notifyError) {
+      return NextResponse.json({ error: notifyError.message }, { status: 500 });
     }
+
+    // Send confirmation email to the client
+    const welcomeEmail = getWelcomeEmailTemplate({ clientName: body.name });
+
+    await resend.emails.send({
+      from: fromAddress,
+      to: body.email,
+      subject: welcomeEmail.subject,
+      html: welcomeEmail.html
+    });
 
     return NextResponse.json({ success: true });
   } catch {

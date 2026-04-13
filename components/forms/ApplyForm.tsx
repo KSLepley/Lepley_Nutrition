@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 type FormData = {
   name: string;
   email: string;
+  phone: string;
   age: string;
   gender: string;
   height: string;
@@ -24,6 +25,7 @@ type ApplyFormProps = {
 const initialFormData: FormData = {
   name: "",
   email: "",
+  phone: "",
   age: "",
   gender: "",
   height: "",
@@ -107,6 +109,18 @@ export function ApplyForm({ selectedPlan }: ApplyFormProps) {
               type="email"
               value={formData.email}
               onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+              className="mt-2 w-full rounded-xl border border-beige bg-ivory px-4 py-3 text-sm focus:border-sage focus:outline-none"
+            />
+          </label>
+
+          <label className="text-sm font-medium text-ink">
+            Phone Number
+            <input
+              required
+              type="tel"
+              placeholder="e.g. (555) 123-4567"
+              value={formData.phone}
+              onChange={(event) => setFormData({ ...formData, phone: event.target.value })}
               className="mt-2 w-full rounded-xl border border-beige bg-ivory px-4 py-3 text-sm focus:border-sage focus:outline-none"
             />
           </label>
