@@ -207,5 +207,17 @@ marimo/_lsp/
 __marimo__/
 node_modules
 .next
+
+# Lepley Nutrition: client data & non-app business files (never push to public repo)
+client_plans/
+Lepley_Nutrition_Coach_Notes.html
+Lepley_Nutrition_Intake_Form.html
+Lepley-Nutrition-30-Day-Content-Plan.xlsx
+Lepley-Nutrition-Client-Acquisition-Plan.docx
+HANDOFF.md
+HANDOFF copy.md
+story_images/
+.auto-memory/
+Lepley_Nutrition/
 .env.local
 !.env.example

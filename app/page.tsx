@@ -46,11 +46,11 @@ const galleryImages = [
 ];
 
 const mealGalleryImages = [
-  { src: "/images/Image%20(2).jpeg", alt: "High-protein whole-food meal prepared for nutrition coaching clients" },
-  { src: "/images/Image%20(3).jpeg", alt: "Balanced meal example with protein, carbs, and healthy fats" },
-  { src: "/images/Image%20(5).jpeg", alt: "Prepared whole-food meal option from structured nutrition planning" },
-  { src: "/images/Image%20(6).jpeg", alt: "Macro-friendly meal built for performance and recovery" },
-  { src: "/images/Image%20(7).jpeg", alt: "Flexible high-protein meal idea with balanced macros" }
+  { src: "/images/meal-1.jpg", alt: "High-protein whole-food meal prepared for nutrition coaching clients" },
+  { src: "/images/meal-2.jpg", alt: "Balanced meal example with protein, carbs, and healthy fats" },
+  { src: "/images/meal-3.jpg", alt: "Prepared whole-food meal option from structured nutrition planning" },
+  { src: "/images/meal-4.jpg", alt: "Macro-friendly meal built for performance and recovery" },
+  { src: "/images/meal-5.jpg", alt: "Flexible high-protein meal idea with balanced macros" }
 ];
 
 export default function HomePage() {
