@@ -74,8 +74,6 @@ export function ApplyForm({ selectedPlan }: ApplyFormProps) {
         throw new Error("Failed to submit application");
       }
 
-      // Optional dev log for local debugging.
-      console.log("Apply form submission:", payload);
       setIsSubmitted(true);
       setFormData(initialFormData);
       setTermsAccepted(false);

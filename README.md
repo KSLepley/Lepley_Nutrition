@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Lepley_Nutrition
-=======
 # Lepley Nutrition Marketing Site
 
 Minimal, premium marketing website built with Next.js App Router, TypeScript, and Tailwind CSS.
@@ -85,4 +82,3 @@ Place these files in `public/images/`:
 - `client-1.jpg`
 - `client-2.jpg`
 - `client-3.jpg`
->>>>>>> 638cab4 (Initial site)
